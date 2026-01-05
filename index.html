@@ -126,7 +126,7 @@ h1{
   to{text-shadow:0 0 20px purple, 0 0 40px violet}
 }
 
-/* كأس إفريقيا */
+/* كأس إفريقيا مع حركة صعود وهبوط */
 .africa-cup{
   margin-top:25px;
   display:flex;
@@ -134,12 +134,19 @@ h1{
 }
 .africa-cup img{
   width:140px;
-  animation:cupGlow 2.5s infinite alternate;
+  animation:cupGlow 2.5s infinite alternate, cupMove 3s ease-in-out infinite alternate;
   filter:drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange);
 }
+
 @keyframes cupGlow{
   from{transform:scale(1)}
   to{transform:scale(1.08)}
+}
+
+@keyframes cupMove{
+  0%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-15px) scale(1.08)}
+  100%{transform:translateY(0) scale(1)}
 }
 </style>
 </head>
